@@ -1,0 +1,54 @@
+---
+const projects = [
+  {
+    title: 'Plataforma E-Commerce Fullstack',
+    description: 'Desarrollo de tienda online completa con React y Node.js. Incluye panel de administración, integración de pagos Stripe, gestión de inventario y sistema de autenticación.',
+    tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+    link: '#',
+  },
+  {
+    title: 'App de Gestión de Tareas con Vue.js',
+    description: 'Aplicación web colaborativa en tiempo real con Vue.js y PostgreSQL. Funcionalidades de gestión de proyectos, visualización de datos y comunicación WebSocket.',
+    tags: ['Vue.js', 'Express', 'PostgreSQL', 'Socket.io'],
+    link: '#',
+  },
+  {
+    title: 'Sistema de Diseño UI/UX',
+    description: 'Design system profesional con componentes React reutilizables. Documentación interactiva con Storybook y biblioteca completa en Figma para diseño consistente.',
+    tags: ['React', 'TypeScript', 'Storybook', 'Figma'],
+    link: '#',
+  },
+];
+---
+
+<section id="work" class="projects">
+  <div class="container">
+    <div class="projects-header">
+      <h2>Portfolio de Proyectos Web | Desarrollo Astro, React y Vue</h2>
+      <p>Aplicaciones web modernas desarrolladas con las últimas tecnologías frontend y backend. Ejemplos de desarrollo fullstack con diseño UX/UI profesional.</p>
+    </div>
+
+    <div class="projects-list">
+      {projects.map((project, index) => (
+        <article class="project-item" data-index={index} itemscope itemtype="https://schema.org/CreativeWork">
+          <div class="project-number">{String(index + 1).padStart(2, '0')}</div>
+          <div class="project-info">
+            <h3 itemprop="name">{project.title}</h3>
+            <p itemprop="description">{project.description}</p>
+            <div class="project-tags" itemprop="keywords">
+              {project.tags.map(tag => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+          </div>
+          <a href={project.link} class="project-link" aria-label={`Ver proyecto: ${project.title}`}>
+            <span>Ver proyecto</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<link rel="stylesheet" href="/src/styles/projects.css">

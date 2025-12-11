@@ -1,0 +1,55 @@
+---
+const skills = [
+  { name: 'Astro', icon: 'fas fa-rocket' },
+  { name: 'React', icon: 'fab fa-react' },
+  { name: 'Vue.js', icon: 'fab fa-vuejs' },
+  { name: 'Python', icon: 'fab fa-python' },
+  { name: 'Figma', icon: 'fab fa-figma' },
+  { name: 'Photoshop', icon: 'fab fa-adobe' },
+  { name: 'JavaScript', icon: 'fab fa-js' },
+  { name: 'Git', icon: 'fab fa-git-alt' },
+];
+---
+
+<section id="about" class="about">
+  <div class="container">
+    <div class="about-header">
+      <h2>Desarrollador Web Fullstack | Especialista en Astro, React y Vue</h2>
+    </div>
+
+    <div class="about-content">
+      <p class="about-intro">
+        Con 23 años y 2 años de experiencia profesional en desarrollo web, me especializo en crear aplicaciones web modernas, responsivas y optimizadas.
+      </p>
+
+      <div class="about-columns">
+        <div class="about-description">
+          <p>
+            Como <strong>desarrollador fullstack</strong>, domino tecnologías frontend como <strong>Astro</strong>,
+            <strong>React</strong> y <strong>Vue.js</strong>, además de backend con <strong>Python</strong> y <strong>Node.js</strong>.
+            Para el diseño UI/UX utilizo <strong>Figma</strong> y <strong>Photoshop</strong>, creando interfaces intuitivas y atractivas.
+          </p>
+          <p>
+            Graduado de <strong>4Geeks Academy</strong> con certificaciones en <strong>Desarrollo Web Full Stack</strong>,
+            <strong>Diseño y Desarrollo de Páginas Web</strong>, <strong>Project Management</strong> y
+            nivel <strong>B2 de inglés</strong>.
+          </p>
+        </div>
+
+        <div class="skills-list">
+          <h3>Tecnologías y Herramientas</h3>
+          <div class="skills-grid">
+            {skills.map(skill => (
+              <div class="skill-item">
+                <i class={skill.icon}></i>
+                <span>{skill.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<link rel="stylesheet" href="/src/styles/about.css">

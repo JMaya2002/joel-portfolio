@@ -1,0 +1,163 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Desarrollador Fullstack con mentalidad de Diseñador. Especializado en Astro, React, Vue y Python." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content={description}>
+  <meta name="keywords" content="desarrollador fullstack, desarrollo web, Astro, React, Vue, Python, diseño UX/UI, frontend, backend, portfolio, programador, Node.js, JavaScript, TypeScript">
+  <meta name="author" content="Joel Maya">
+  <meta name="robots" content="index, follow">
+  <title>{title}</title>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://joelmaya.dev/">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content="https://joelmaya.dev/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://joelmaya.dev/">
+  <meta property="twitter:title" content={title}>
+  <meta property="twitter:description" content={description}>
+  <meta property="twitter:image" content="https://joelmaya.dev/og-image.jpg">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://joelmaya.dev/">
+
+  <!-- Google Fonts - Removed to use system fonts -->
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Joel Maya",
+      "jobTitle": "Desarrollador Web Fullstack",
+      "url": "https://joelmaya.dev",
+      "sameAs": [
+        "https://github.com/joelmaya",
+        "https://linkedin.com/in/joel-maya"
+      ],
+      "knowsAbout": ["Astro", "React", "Vue.js", "Python", "JavaScript", "Node.js", "TypeScript", "Diseño UI/UX", "Desarrollo Frontend", "Desarrollo Backend"],
+      "alumniOf": {
+        "@type": "Organization",
+        "name": "4Geeks Academy"
+      },
+      "description": "Desarrollador fullstack especializado en Astro, React, Vue.js y Python. Creación de aplicaciones web modernas con diseño UI/UX profesional."
+    }
+  </script>
+</head>
+<body>
+  <slot />
+</body>
+</html>
+
+<style is:global>
+  /* ===== GLOBAL STYLES - Diseño minimalista ===== */
+
+  :root {
+    /* Colores principales - Paleta minimalista */
+    --primary: #3b82f6;
+    --primary-dark: #2563eb;
+
+    /* Textos - Escala de grises */
+    --text: #0a0a0a;           /* Negro suave */
+    --text-light: #525252;     /* Gris medio */
+    --text-muted: #a3a3a3;     /* Gris claro */
+
+    /* Backgrounds - Tonos neutros */
+    --bg: #ffffff;
+    --bg-alt: #fafafa;         /* Gris muy claro */
+
+    /* Bordes - Sutiles */
+    --border: #e5e5e5;
+    --border-light: #f5f5f5;
+
+    /* Sombras - Mínimas */
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Dark mode */
+  body.dark {
+    --text: #fafafa;
+    --text-light: #a3a3a3;
+    --text-muted: #737373;
+
+    --bg: #0a0a0a;
+    --bg-alt: #171717;
+
+    --border: #262626;
+    --border-light: #1f1f1f;
+
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.5);
+  }
+</style>

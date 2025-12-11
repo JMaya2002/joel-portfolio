@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Joel Maya - Desarrollador Web Fullstack | Astro, React, Vue y Python"
+  description="Portfolio de Joel Maya, desarrollador fullstack especializado en Astro, React, Vue.js y Python. Creación de aplicaciones web modernas con diseño UI/UX profesional. Disponible para proyectos freelance.">
+  <Navbar />
+  <main>
+    <Hero />
+    <Contact />
+    <About />
+    <Projects />
+  </main>
+  <Footer />
+</Layout>
